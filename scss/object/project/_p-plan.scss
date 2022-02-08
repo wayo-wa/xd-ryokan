@@ -1,0 +1,52 @@
+.p-plan {
+    padding: 60px 0 142px;
+    background-image: url(../../../images/bg02.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &__wrap {
+        margin-top: 72px;
+    }
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        @include mq-down() {
+            flex-direction: column;
+        }
+    }
+    &__item {
+        width: 100%;
+        @include mq-up(sm) {
+            width: calc((100% - 4.8vw * 2) / 3);
+        }
+        &:not(:first-of-type) {
+            @include mq-down() {
+                margin-top: 64px;
+            }
+        }
+    }
+    &__img {
+        margin-bottom: 28px;
+    }
+    &__desc {
+        &__ttl {
+            font-size: 2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            & br {
+                display: none;
+                @include mq-up() {
+                    display: block;
+                }
+            }
+            & span {
+                @include mq-up(md) {
+                    display: inline-block;
+                }
+            }
+        }
+        &__txt {
+            margin-top: -8px;
+        }
+    }
+}

@@ -1,0 +1,96 @@
+.p-access {
+    padding: 60px 0 110px;
+    background-image: url(../../../images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &__inner {
+        max-width: 1312px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 36px;
+        @include mq-down() {
+            padding: 0 20px;
+        }
+    }
+    &__wrap {
+        margin-top: 90px;
+        @include mq-down() {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &__location {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 66px;
+        @include mq-up(lg) {
+            flex-direction: row;
+        }
+        &__pic {
+            width: 100%;
+            margin: 0 auto;
+            @include mq-up(lg) {
+                max-width: 656px;
+            }
+        }
+        @include mq-up(xl) {
+            padding-left: 28px;
+
+        }
+        &__info {
+            padding-top: 18px;
+            @include mq-up(lg) {
+                margin-left: 4%;
+            }
+            @include mq-up() {
+                margin-left: 6.7%;
+            }
+            & dt {
+                margin-bottom: 20px;
+                @include mq-down() {
+                    margin-bottom: 12px;
+                }
+            }
+            & .blank {
+                line-height: 2;
+                @include mq-down() {
+                    line-height: 1.2;
+                }
+            }
+            & dd {
+                margin-bottom: 20px;
+            }
+            & .txt {
+                line-height: 1.5;
+                @include mq-up() {
+                    line-height: 2;
+                }
+            }
+        }
+    }
+    &__map {/*google map埋め込み*/
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 75%; /* 高さの比率を4:3で伸縮 */
+        @include mq-up(lg) {
+            text-align: center;
+            padding-top: 592px;/* map伸縮させないので高さ固定 */
+        }
+        & iframe {/*google map 埋め込みのレスポンシブ用　縦横比保持して伸縮*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            @include mq-up(lg) {/*1025px以上はサイズ固定*/
+                width: 792px;
+                height: 592px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

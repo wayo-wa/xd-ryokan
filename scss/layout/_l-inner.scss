@@ -1,0 +1,9 @@
+.l-inner {
+    max-width: 1252px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 36px;
+    @include mq-down() {
+        padding: 0 16px;
+    }
+}

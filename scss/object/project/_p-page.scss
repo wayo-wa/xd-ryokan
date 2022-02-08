@@ -1,0 +1,186 @@
+.p-page {
+    &__top {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &--room {
+            background-image: url(../../../images/oheya-header.jpg);
+        }
+        &--menu {
+            background-image: url(../../../images/menu-header.jpg);
+        }
+        &--spa {
+            background-image: url(../../../images/onsen-header.jpg);
+        }
+    }
+    &__ttl {
+        font-size: 3.4rem;
+        line-height: 1.23;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+    &__bread {//パンくずリスト
+        padding-top: 32px;
+        padding-bottom: 32px;
+        & ol li {
+            display: inline-block;
+            &::after {
+                content: " > ";
+            }
+            &:last-child::after {
+                content: "";
+            }
+        }
+    }
+    &__main {
+        padding-top: 60px;
+        padding-bottom: 150px;
+        &.-sm {
+            padding-bottom: 100px;
+        }
+    }
+    &__desc {
+        margin-bottom: 76px;
+        @include mq-up(md) {
+            text-align: center;
+        }
+    }
+    &__menu {
+        width: 100%;
+    }
+    &__item {
+        @include mq-up(md) {
+            position: relative;
+            display: flex;
+            height: 440px;
+        }
+        &:not(:last-of-type) {
+            margin-bottom: 84px;
+        }
+        &:nth-of-type(even) {
+            & .p-page__item__img {
+                @include mq-up(md) {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+            & .p-page__item__desc {
+                @include mq-up(md) {
+                    right: auto;
+                    left: 0;
+                    padding-left: 60px;
+                    padding-right: 17vw;
+                }
+                @include mq-up() {
+                    padding-right: 0;
+                }
+            }
+        }
+        &__img {
+            width: 100%;
+            z-index: 2;
+            @include mq-up(md) {
+                width: 44.5%;
+            }
+            @include mq-up() {
+                width: 525px;
+            }
+        }
+        &__desc {
+            background-image: url(../../../images/bg.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 40px 32px 32px;
+            @include mq-down() {
+                padding-right: 12px;
+                padding-left: 12px;
+            }
+            @include mq-up(md) {
+                position: absolute;
+                top: 56px;
+                right: 0;
+                width: 69%;
+                height: 380px;
+                padding-top: 55px;
+                padding-left: 17vw;
+            }
+            @include mq-up() {
+                width: 814px;
+                padding-left: 238px;
+            }
+            & .ttl {
+                font-size: 2.4rem;
+                line-height: 1.33;
+                margin-bottom: 40px;
+            }
+            & .txt {
+                margin-bottom: 20px;
+                @include mq-down() {
+                    line-height: 1.5;
+                }
+                @include mq-up(sm) {
+                    margin-bottom: 38px;
+                }
+                &-caution > p {
+                    font-size: 1.4rem;
+                    line-height: 1.5;
+                }
+                & br {
+                    display: none;
+                    @include mq-up() {
+                        display: block;
+                    }
+                }
+            }
+            }
+
+    }
+    &__cont {
+        /* 温泉の効能部分 */
+        &--spa {//
+            border-top: 1px solid #E7E7E7;
+            border-bottom: 1px solid #E7E7E7;
+            margin-top: 156px;
+            padding: 48px 0;
+            @include mq-up(md) {
+                padding: 6.4% 12.7%;
+            }
+            @include mq-up() {
+                padding: 90px 150px 74px;
+            }
+            & > .ttl {
+                font-size: 2.6rem;
+                line-height: 1.23;
+                text-align: center;
+                margin-bottom: 48px;
+            }
+            & .desc {
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 1.5rem;
+                line-height: 1.78;
+                border-bottom: 1px solid #E7E7E7;
+                & > .ttl {
+                    width: 25%;
+                    padding: 10px 0 10px;
+                    border-top: 1px solid #E7E7E7;
+                }
+                & > .txt {
+                    width: calc(100% - 25%);
+                    padding: 10px 0 10px;
+                    border-top: 1px solid #E7E7E7;
+                    &:last-of-type {
+                        line-height: 1.46;
+                    }
+                }
+            }
+        }
+    }
+}

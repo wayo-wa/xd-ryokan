@@ -1,0 +1,16 @@
+.c-section {
+    &__head {
+        text-align: center;
+    }
+    &__img {
+        width: 40px;
+        margin-bottom: 20px;
+    }
+    &__ttl {
+        font-size: 2.6rem;
+        line-height: 0.88;
+        @include mq-up() {
+            font-size: 3.2rem;
+        }
+    }
+}

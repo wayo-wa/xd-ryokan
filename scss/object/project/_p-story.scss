@@ -1,0 +1,87 @@
+.p-story {
+    background-image: url(../../../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 64px 0 96px;
+    @include mq-up() {
+        height: 681px;
+    }
+    &__inner {//親
+        max-width: 1032px;
+        width: 100%;
+        padding: 0 36px;
+        margin: 0 auto;
+        @include mq-up(sm) {
+            text-align: right;//親要素に右配置指定（子要素にinline-block指定）
+        }
+    }
+    &__content {//子（ttlを囲むbox）
+        display: block;
+        margin: 0 auto;
+        @include mq-up(sm) {
+            writing-mode: vertical-rl;//縦書き
+            text-align: left;
+        }
+        @include mq-up() {
+            display: inline-block;//この指定がないと右配置にならない
+        }
+    }
+    &__ttl {
+        font-size: 2.8rem;
+        line-height: 1.7;  
+        & .sec {
+            padding-top: 86px;//字下げ
+        }
+        @include mq-down() {
+            margin-bottom: 36px;
+        }
+        @include mq-up(sm) {
+            letter-spacing: 0.5em;
+            margin-left: 48px;
+        }
+        @include mq-up(lg) {
+            line-height: 2;
+            margin-left: 96px;//ピクセルパーフェクト版で透かして調整した。
+        }
+    }
+    &__txt {
+        & span {
+            text-combine-upright: all; /* 英数字の向きを縦にする */
+            // text-orientation: upright;はIE非対応の為、上記text-combine-uprightを使用した
+            @include mq-up() {
+                line-height: 2.37;//(22px+16px)/16px=2.37
+            }
+        }
+        & br {
+            @include mq-down() {
+                display: none;
+            }
+        }
+        @include mq-down() {
+            margin-bottom: 32px;
+        }
+        @include mq-up(sm) {
+            letter-spacing: 0.39em;
+            padding-top: 86px;
+            margin-left: 36px;
+        }
+        @include mq-up(lg) {
+            margin-left: 56px;
+        }
+        @include mq-up() {
+            line-height: 2.37;//(22px+16px)/16px=2.37
+            margin-left: 98px;//カンプ透かして調整
+        }
+    }
+    &__end {
+        font-size: 2.2rem;
+        margin-right: -4px;
+        padding-top: 380px;
+        line-height: 1.37;
+        letter-spacing: 0.4em;
+        @include mq-down() {
+            padding-top: 0;
+            text-align: right;
+        }
+    }  
+}

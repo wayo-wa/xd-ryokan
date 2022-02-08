@@ -1,0 +1,76 @@
+.p-news {
+    padding: 60px 0;
+    &__tab {/*営業情報、お知らせ　の切り替えタブ*/
+        &__area {
+            text-align: center;
+            margin-top: 50px;
+            & .tab {
+                display: inline-block;
+                cursor: pointer;
+                &:first-of-type {
+                    margin-right: 52px;
+                }
+                &.is-active {
+                    border-bottom: 1px solid #707070;
+                }
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    &__wrap {
+        margin-top: 48px;
+    }
+    &__menu {
+        display: none;
+        &.is-active {
+            display: grid;
+            column-gap: 46px;
+            row-gap: 20px;
+            grid-template-columns: 1fr;
+            @include mq-down() {
+                row-gap: 12px;
+            }
+            @include mq-up(lg) {
+                grid-template-columns: 1fr 1fr;
+    
+            }
+        }
+    }
+    &__item {
+        display: flex;
+        background: #F6F6F6;
+        padding: 15px 10px;
+        @include mq-down() {
+            min-height: 110px;
+            padding: 20px;
+        }
+    }
+    &__info {
+        padding: 0 30px;
+        @include mq-down() {
+            padding: 0;
+        }
+        & time {
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            @include mq-up() {
+                margin-bottom: 0;
+            }
+        }
+        &__txt {
+            line-height: 1.5;
+            @include mq-up() {
+                line-height: 2;
+            }
+        }
+    }
+    &__img {
+        min-width: 103px;
+        @include mq-down() {
+            display: none;
+        }
+    }
+}

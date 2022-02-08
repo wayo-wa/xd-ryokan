@@ -1,0 +1,22 @@
+$breakpoint-up: (
+  'sm': 'screen and (min-width: 641px)',//タブレット縦向き、スマホ横向き（640px以上）のスタイル
+  'md': 'screen and (min-width: 821px)',
+  'lg': 'screen and (min-width: 1025px)',//ノートPC、タブレット横向き（1024px以上）のスタイル
+  'xl': 'screen and (min-width: 1401px)',//デスクトップ（1400px以上）のスタイル
+  ) !default;
+
+$breakpoint-down: (
+  'sm': 'screen and (max-width: 640px)',//スマホ縦向き（639px以下）のスタイル
+  ) !default;
+
+@mixin  mq-up($breakpoint: xl) {
+    @media #{map-get($breakpoint-up, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin  mq-down($breakpoint: sm) {
+    @media #{map-get($breakpoint-down, $breakpoint)} {
+        @content;
+    }
+}
