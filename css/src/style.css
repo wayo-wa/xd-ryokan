@@ -417,15 +417,11 @@ img {
   width: 100%;
   height: 80px;
   color: #FFFFFF;
-  font-weight: bold;
-  -webkit-transition: .4s;
-  transition: .4s; }
+  font-weight: bold; }
   .l-header.is-change-color {
     background: #FFFFFF;
     color: #000000;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    -webkit-transition: .4s;
-    transition: .4s; }
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
   .l-header.sub {
     background: #FFFFFF;
     color: #000000; }
@@ -897,22 +893,20 @@ img {
       border: 1px solid #E7E7E7;
       width: 100%;
       height: 32px;
-      padding: 0 10px; }
+      padding: 0 10px;
+      line-height: normal; }
       .p-modal__form .input::-webkit-input-placeholder {
         color: #797878;
         font-size: 14px;
-        font-size: 1.4rem;
-        line-height: 1.35; }
+        font-size: 1.4rem; }
       .p-modal__form .input:-ms-input-placeholder {
         color: #797878;
         font-size: 14px;
-        font-size: 1.4rem;
-        line-height: 1.35; }
+        font-size: 1.4rem; }
       .p-modal__form .input::placeholder {
         color: #797878;
         font-size: 14px;
-        font-size: 1.4rem;
-        line-height: 1.35; }
+        font-size: 1.4rem; }
     .p-modal__form select {
       font-size: 14px;
       font-size: 1.4rem;
@@ -1430,10 +1424,8 @@ img {
   background-image: url(../../../images/bg.jpg);
   background-size: cover;
   background-position: center;
-  padding: 64px 0 96px; }
-  @media screen and (min-width: 1401px) {
-    .p-story {
-      height: 681px; } }
+  padding-top: 64px;
+  height: 680px; }
   .p-story__inner {
     max-width: 1032px;
     width: 100%;
@@ -1472,11 +1464,17 @@ img {
         line-height: 2;
         margin-left: 96px; } }
   .p-story__txt span {
+    /* 英数字の向きを縦にする */
+    display: inline-block;
+    /*数字が行の左に寄ってしまうのでinline-blockにしたら行の中央に数字がきた*/
+    -webkit-text-combine: horizontal;
+    /*（Chrome9～47、Safari5.1以降） */
+    -moz-text-combine-upright: all;
+    /*（IE、Edge） */
+    -ms-text-combine-horizontal: all;
+    /* (Firefox nightly 版) */
     text-combine-upright: all;
-    /* 英数字の向きを縦にする */ }
-    @media screen and (min-width: 1401px) {
-      .p-story__txt span {
-        line-height: 2.37; } }
+    /*標準（現在ほとんどの対応ブラウザで縦中横にしたい時に使われている） */ }
   @media screen and (max-width: 640px) {
     .p-story__txt br {
       display: none; } }
@@ -1485,7 +1483,7 @@ img {
       margin-bottom: 32px; } }
   @media screen and (min-width: 641px) {
     .p-story__txt {
-      letter-spacing: 0.39em;
+      letter-spacing: 0.35em;
       padding-top: 86px;
       margin-left: 36px; } }
   @media screen and (min-width: 1025px) {
