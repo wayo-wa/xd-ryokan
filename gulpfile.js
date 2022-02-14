@@ -8,8 +8,6 @@ const imagemin = require('gulp-imagemin');//画像圧縮
 const pngquant = require('imagemin-pngquant');//画像圧縮(pngオプション設定)
 const mozjpeg = require('imagemin-mozjpeg');//画像圧縮(jpegオプション設定)
 const changed = require('gulp-changed');//画像圧縮されたファイルを返す
-// const minjs = require('gulp-uglify');//js圧縮
-
 
 //sassをcssにコンパイル
 gulp.task('sass', function() {
@@ -39,15 +37,6 @@ gulp.task('mincss', function() {
     .pipe(rename('app.min.css'))//ファイル名と拡張子の変更
     .pipe(gulp.dest('./css'));//出力先（cssフォルダに自動で作成される）
 });
-
-//jsを圧縮
-// gulp.task('minjs', function() {
-//     return gulp.src('./js/src/base.js')//元ファイル
-//     .pipe(plumber())//構文エラーあってもgulpを止めない.
-//     .pipe(minjs())//js圧縮
-//     .pipe(rename('app.min.js'))//ファイル名と拡張子の変更
-//     .pipe(gulp.dest('./js'));//出力先（jsフォルダに自動で作成される）
-// });
 
 //画像を圧縮
 const paths = {
@@ -79,6 +68,5 @@ gulp.task('watch', function(){
     gulp.watch('./scss/**', gulp.series('sass'));//scss以下すべてのファイルをwatch
     gulp.watch('./css/src/*.css', gulp.series('mincss'));//css圧縮
     gulp.watch(paths.srcDir + '/*', gulp.series('imagemin'));//画像圧縮
-    // gulp.watch('./js/src/base.js', gulp.series('minjs'));//js圧縮
 });
 
