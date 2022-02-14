@@ -13,3 +13,6 @@ PC版デザインカンプからコーディングしました。
 ・パンくずリスト  
 ・ハンバーガーメニュー  
 ・レスポンシブ対応  
+  
+ ![post-ryokan](https://user-images.githubusercontent.com/73923419/153809481-497594d7-3f36-47cf-b3ff-2d6ff7d55cb4.png)
+
