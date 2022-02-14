@@ -748,68 +748,12 @@ img {
     height: 100%;
     left: 0;
     top: 0;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-animation: fv-animation 18s infinite;
             animation: fv-animation 18s infinite;
     /*18秒かけてアニメーション(6秒×3枚)。無限ループ*/ }
-    .p-fv__slideBox__img:nth-of-type(1) {
-      -webkit-animation-delay: 0s;
-              animation-delay: 0s;
-      /*6秒ずつ現れるスライドが切り替わる*/ }
-    .p-fv__slideBox__img:nth-of-type(2) {
-      -webkit-animation-delay: 6s;
-              animation-delay: 6s; }
-    .p-fv__slideBox__img:nth-of-type(3) {
-      -webkit-animation-delay: 12s;
-              animation-delay: 12s; }
-
-@-webkit-keyframes fv-animation {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
-  16% {
-    /*3秒÷18秒=16% 3秒かけてフェードイン*/
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
-  33% {
-    /*6秒÷18秒=33% ここで次の画像が再生される*/
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
-  66% {
-    /*12秒÷18秒=66% 3秒かけてズームしながらフェードアウト*/
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2); }
-  100% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; } }
-
-@keyframes fv-animation {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
-  16% {
-    /*3秒÷18秒=16% 3秒かけてフェードイン*/
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
-  33% {
-    /*6秒÷18秒=33% ここで次の画像が再生される*/
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; }
-  66% {
-    /*12秒÷18秒=66% 3秒かけてズームしながらフェードアウト*/
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2); }
-  100% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; } }
   .p-fv__ttl {
     position: absolute;
     top: 33%;
