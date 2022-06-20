@@ -3,7 +3,7 @@ Adobe XDのデザインデータをもとに、架空の温泉旅館のHTML/CSS�
   
 担当：コーディング  
 使用技術：HTML, Sass(CSS), JavaScript (jQuery/gulp)  
-デザインツール：XD  
+デザインツール：Adobe XD  
   
 ・スクロール時のheader変化（固定、背景色）  
 ・ファーストビューのアニメーション（css animationでズームしながら画像切り替え）  
